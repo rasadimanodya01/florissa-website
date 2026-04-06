@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Florissa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="image/logo.png" alt="Florissa" class="nav-logo-img">
+    <span class="nav-brand-name">Florissa</span>
+
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><a href="cart.html" class="nav-cart">🛒 <span id="cart-count">0</span></a></li>
+  </ul>
+</nav>
+
+<!-- OFFERS TICKER -->
+<div class="offers-ticker">
+  <div class="offers-track">
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <span class="section-label">Our Collection</span>
+  <h1 class="section-title">All <em>Products</em></h1>
+  <p class="section-sub">Every piece is handcrafted with ribbon and pipe cleaners — made with love in Sri Lanka.</p>
+</section>
+
+<!-- FILTER + SORT BAR -->
+<section class="filter-section">
+  <div class="filter-sort-bar">
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="applyFilters('all', this)">All</button>
+      <button class="filter-btn" onclick="applyFilters('bouquet', this)">Bouquets</button>
+      <button class="filter-btn" onclick="applyFilters('frame', this)">Frames</button>
+      <button class="filter-btn" onclick="applyFilters('pot', this)">Pots</button>
+      <button class="filter-btn" onclick="applyFilters('keytag', this)">Key Tags</button>
+      <button class="filter-btn" onclick="applyFilters('giftset', this)">Gift Sets</button>
+      <button class="filter-btn material-btn" onclick="applyFilters('ribbon', this)">🎀 Ribbon</button>
+      <button class="filter-btn material-btn" onclick="applyFilters('pipecleaner', this)">🌀 Pipe Cleaner</button>
+    </div>
+    <div class="sort-wrap">
+      <label>Sort by:</label>
+      <select id="sort-select" onchange="applySort()">
+        <option value="popular">Most Popular</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-page-section">
+  <div class="products-page-grid" id="products-container">
+
+    <div class="product-page-card" data-category="bouquet" data-material="ribbon" data-price="1200" data-rating="4.8" data-popular="24">
+      <div class="product-page-img-wrap" onclick="openModal('Ribbon Flower Bouquet',1200,'image/redribbon.jpg','A stunning bouquet made entirely from satin ribbon — lasts forever, perfect for any occasion.',4.8,'ribbon','bouquet')">
+        <img src="image/redribbon.jpg" alt="Ribbon Bouquet">
+        <span class="product-badge">Bestseller</span>
+        <div class="product-offer-tag">20% OFF</div>
+      </div>
+      <div class="product-page-info">
+        <h3>Ribbon Flower Bouquet</h3>
+        <div class="product-page-stars">★★★★★ <span>4.8 (24 reviews)</span></div>
+        <p>A stunning bouquet made entirely from satin ribbon — lasts forever, perfect for any occasion.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <div><span class="product-page-price">LKR 1,200</span> <span class="product-original">LKR 1,500</span></div>
+          <button class="add-to-cart-btn" onclick="addToCart('Ribbon Flower Bouquet',1200)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="bouquet" data-material="pipecleaner" data-price="1000" data-rating="4.5" data-popular="18">
+      <div class="product-page-img-wrap" onclick="openModal('Pipe Cleaner Bouquet',1000,'image/pipeclean.jpg','Colourful and fun bouquet made from soft pipe cleaners — great for kids and gifting.',4.5,'pipecleaner','bouquet')">
+        <img src="image/pipeclean.jpg" alt="Pipe Cleaner Bouquet">
+        <span class="product-badge" style="background:var(--green)">New</span>
+      </div>
+      <div class="product-page-info">
+        <h3>Pipe Cleaner Bouquet</h3>
+        <div class="product-page-stars">★★★★★ <span>4.5 (18 reviews)</span></div>
+        <p>Colourful and fun bouquet made from soft pipe cleaners — great for kids and gifting.</p>
+        <div class="product-material-tag pipe-tag">🌀 Pipe Cleaner</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 1,000</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Pipe Cleaner Bouquet',1000)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="bouquet" data-material="ribbon" data-price="1500" data-rating="4.7" data-popular="20">
+      <div class="product-page-img-wrap" onclick="openModal('Mixed Ribbon Bouquet',1500,'image/mixribbon.jpg','A mix of ribbon and pipe cleaner flowers in a beautiful arrangement for any special day.',4.7,'ribbon','bouquet')">
+        <img src="image/mixribbon.jpg" alt="Mixed Bouquet">
+      </div>
+      <div class="product-page-info">
+        <h3>Mixed Ribbon Bouquet</h3>
+        <div class="product-page-stars">★★★★★ <span>4.7 (20 reviews)</span></div>
+        <p>A mix of ribbon and pipe cleaner flowers in a beautiful arrangement for any special day.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 1,500</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Mixed Ribbon Bouquet',1500)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="frame" data-material="ribbon" data-price="850" data-rating="4.6" data-popular="18">
+      <div class="product-page-img-wrap" onclick="openModal('Flower Photo Frame',850,'image/flowersbox.jpg','A beautiful handmade flower frame — perfect for displaying your favourite memories.',4.6,'ribbon','frame')">
+        <img src="image/Flowersbox.jpg" alt="Flower Frame">
+        <div class="product-offer-tag">15% OFF</div>
+      </div>
+      <div class="product-page-info">
+        <h3>Flower Photo Frame</h3>
+        <div class="product-page-stars">★★★★★ <span>4.6 (18 reviews)</span></div>
+        <p>A beautiful handmade flower frame — perfect for displaying your favourite memories.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <div><span class="product-page-price">LKR 850</span> <span class="product-original">LKR 1,000</span></div>
+          <button class="add-to-cart-btn" onclick="addToCart('Flower Photo Frame',850)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="frame" data-material="ribbon" data-price="950" data-rating="4.8" data-popular="22">
+      <div class="product-page-img-wrap" onclick="openModal('Heart Flower Frame',950,'image/heartbox.jpg','A romantic heart-shaped frame decorated with ribbon flowers — ideal for couples.',4.8,'ribbon','frame')">
+        <img src="image/heartbox.jpg" alt="Heart Frame">
+        <span class="product-badge" style="background:var(--rose)">Popular</span>
+        <div class="product-offer-tag">15% OFF</div>
+      </div>
+      <div class="product-page-info">
+        <h3>Heart Flower Frame</h3>
+        <div class="product-page-stars">★★★★★ <span>4.8 (22 reviews)</span></div>
+        <p>A romantic heart-shaped frame decorated with ribbon flowers — ideal for couples.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <div><span class="product-page-price">LKR 950</span> <span class="product-original">LKR 1,100</span></div>
+          <button class="add-to-cart-btn" onclick="addToCart('Heart Flower Frame',950)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="pot" data-material="pipecleaner" data-price="950" data-rating="4.7" data-popular="15">
+      <div class="product-page-img-wrap" onclick="openModal('Decorative Flower Pot',950,'image/flowerpot.jpg','A handmade flower arrangement in a decorated pot — great for home and office décor.',4.7,'pipecleaner','pot')">
+        <img src="image/flowerpot.jpg" alt="Flower Pot">
+      </div>
+      <div class="product-page-info">
+        <h3>Decorative Flower Pot</h3>
+        <div class="product-page-stars">★★★★★ <span>4.7 (15 reviews)</span></div>
+        <p>A handmade flower arrangement in a decorated pot — great for home and office décor.</p>
+        <div class="product-material-tag pipe-tag">🌀 Pipe Cleaner</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 950</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Decorative Flower Pot',950)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="pot" data-material="pipecleaner" data-price="650" data-rating="4.5" data-popular="12">
+      <div class="product-page-img-wrap" onclick="openModal('Mini Flower Pot',650,'image/miniflowerpot.jpg','A cute small flower pot — perfect as a desk decoration or a small gift.',4.5,'pipecleaner','pot')">
+        <img src="image/miniflowerpot.jpg" alt="Mini Pot">
+        <span class="product-badge" style="background:var(--green)">New</span>
+      </div>
+      <div class="product-page-info">
+        <h3>Mini Flower Pot</h3>
+        <div class="product-page-stars">★★★★☆ <span>4.5 (12 reviews)</span></div>
+        <p>A cute small flower pot — perfect as a desk decoration or a small gift.</p>
+        <div class="product-material-tag pipe-tag">🌀 Pipe Cleaner</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 650</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Mini Flower Pot',650)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="keytag" data-material="pipecleaner" data-price="350" data-rating="4.9" data-popular="31">
+      <div class="product-page-img-wrap" onclick="openModal('Flower Key Tag',350,'image/keytag.jpg','A handmade flower key tag — a cute and unique accessory for your keys or bag.',4.9,'pipecleaner','keytag')">
+        <img src="image/keytag.jpg" alt="Key Tag">
+        <span class="product-badge" style="background:var(--green)">New</span>
+      </div>
+      <div class="product-page-info">
+        <h3>Flower Key Tag</h3>
+        <div class="product-page-stars">★★★★★ <span>4.9 (31 reviews)</span></div>
+        <p>A handmade flower key tag — a cute and unique accessory for your keys or bag.</p>
+        <div class="product-material-tag pipe-tag">🌀 Pipe Cleaner</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 350</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Flower Key Tag',350)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="keytag" data-material="ribbon" data-price="450" data-rating="4.6" data-popular="14">
+      <div class="product-page-img-wrap" onclick="openModal('Custom Name Key Tag',450,'image/namekeytag.jpg','Personalised flower key tag with your name or initial — makes a great gift.',4.6,'ribbon','keytag')">
+        <img src="image/namekeytag.jpg" alt="Custom Key Tag">
+      </div>
+      <div class="product-page-info">
+        <h3>Custom Name Key Tag</h3>
+        <div class="product-page-stars">★★★★★ <span>4.6 (14 reviews)</span></div>
+        <p>Personalised flower key tag with your name or initial — makes a great gift.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 450</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Custom Name Key Tag',450)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="giftset" data-material="ribbon" data-price="2200" data-rating="4.8" data-popular="28">
+      <div class="product-page-img-wrap" onclick="openModal('Florissa Gift Set',2200,'image/giftpack1.jpeg','A curated gift set including a mini bouquet, key tag, and flower pot — perfect for any occasion.',4.8,'ribbon','giftset')">
+        <img src="image/giftpack1.jpeg" alt="Gift Set">
+        <span class="product-badge">Bestseller</span>
+        <div class="product-offer-tag">FREE Key Tag!</div>
+      </div>
+      <div class="product-page-info">
+        <h3>Florissa Gift Set</h3>
+        <div class="product-page-stars">★★★★★ <span>4.8 (28 reviews)</span></div>
+        <p>A curated gift set including a mini bouquet, key tag, and flower pot — perfect for any occasion.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 2,200</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Florissa Gift Set',2200)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="giftset" data-material="ribbon" data-price="2800" data-rating="4.9" data-popular="32">
+      <div class="product-page-img-wrap" onclick="openModal('Birthday Gift Set',2800,'image/birthdaygift.jpeg','A beautiful birthday gift set with a ribbon bouquet and a personalised frame.',4.9,'ribbon','giftset')">
+        <img src="image/birthdaygift.jpeg" alt="Birthday Gift Set">
+        <span class="product-badge" style="background:var(--rose)">Popular</span>
+      </div>
+      <div class="product-page-info">
+        <h3>Birthday Gift Set</h3>
+        <div class="product-page-stars">★★★★★ <span>4.9 (32 reviews)</span></div>
+        <p>A beautiful birthday gift set with a ribbon bouquet and a personalised frame.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 2,800</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Birthday Gift Set',2800)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-page-card" data-category="giftset" data-material="ribbon" data-price="3500" data-rating="4.7" data-popular="19">
+      <div class="product-page-img-wrap" onclick="openModal('Wedding Gift Set',3500,'image/wedding.jpeg','An elegant wedding gift set with a white ribbon bouquet, frame, and flower pot.',4.7,'ribbon','giftset')">
+        <img src="image/wedding.jpeg" alt="Wedding Gift Set">
+      </div>
+      <div class="product-page-info">
+        <h3>Wedding Gift Set</h3>
+        <div class="product-page-stars">★★★★★ <span>4.7 (19 reviews)</span></div>
+        <p>An elegant wedding gift set with a white ribbon bouquet, frame, and flower pot.</p>
+        <div class="product-material-tag ribbon-tag">🎀 Ribbon</div>
+        <div class="product-page-bottom">
+          <span class="product-page-price">LKR 3,500</span>
+          <button class="add-to-cart-btn" onclick="addToCart('Wedding Gift Set',3500)">Add to Cart 🛒</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CUSTOM ORDER BANNER -->
+<section class="custom-banner reveal">
+  <div class="custom-banner-text">
+    <h2>Can't find what you're looking for?</h2>
+    <p>We take custom orders! Tell us your idea and we'll make it happen.</p>
+  </div>
+  <a href="contact.html" class="btn-primary">Request Custom Order →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand-link">
+        <img src="image/logo.png" alt="Florissa" class="footer-logo-img">
+        <span class="footer-brand-name">Florissa</span>
+      </a>
+      <p>Handmade ribbon and pipe cleaner flowers for gifts, occasions, and home décor — crafted with love in Sri Lanka.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">&#9752;</a>
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="social-link" title="WhatsApp">&#9742;</a>
+        <a href="#" class="social-link" title="Facebook">&#9670;</a>
+      </div>
+    </div>
+
+    <!-- Shop links -->
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="products.html">Bouquets</a></li>
+        <li><a href="products.html">Frames</a></li>
+        <li><a href="products.html">Pots</a></li>
+        <li><a href="products.html">Key Tags</a></li>
+        <li><a href="products.html">Gift Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Info links -->
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Custom Orders</a></li>
+        <li><a href="contact.html">Delivery</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact links -->
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="https://wa.me/94XXXXXXXXX" target="_blank">WhatsApp</a></li>
+        <li><a href="contact.html">Email Us</a></li>
+        <li><a href="products.html" class="footer-order-link">&#9830; Order Now</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>&#169; 2026 Florissa. All rights reserved.</span>
+    <span>Crafted with &#10022; in Sri Lanka</span>
+  </div>
+</footer>
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<!-- PRODUCT MODAL (same as index) -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-grid">
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="">
+        <div class="modal-offer-tag" id="modal-offer-tag"></div>
+      </div>
+      <div class="modal-info">
+        <div class="modal-material-tag" id="modal-material-tag"></div>
+        <h2 id="modal-name"></h2>
+        <div class="modal-stars" id="modal-stars"></div>
+        <div class="modal-price" id="modal-price"></div>
+        <p id="modal-desc"></p>
+        <button class="btn-primary modal-cart-btn" id="modal-cart-btn">Add to Cart 🛒</button>
+        <a id="modal-wa-btn" href="#" target="_blank" class="btn-whatsapp modal-wa-btn">💬 Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="modal-reviews">
+      <h3>Customer Reviews</h3>
+      <div class="reviews-summary" id="reviews-summary"></div>
+      <div class="reviews-list" id="reviews-list"></div>
+      <div class="review-form-wrap">
+        <h4>Leave a Review</h4>
+        <div class="star-picker" id="star-picker">
+          <span onclick="pickStar(1)">★</span>
+          <span onclick="pickStar(2)">★</span>
+          <span onclick="pickStar(3)">★</span>
+          <span onclick="pickStar(4)">★</span>
+          <span onclick="pickStar(5)">★</span>
+        </div>
+        <input type="text" id="review-name" placeholder="Your name" class="review-input">
+        <textarea id="review-comment" placeholder="Share your experience..." class="review-textarea" rows="3"></textarea>
+        <button class="btn-primary" onclick="submitReview()" style="margin-top:0.8rem">Submit Review 🌸</button>
+        <div class="review-thanks" id="review-thanks">🌸 Thank you for your review!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  let activeFilter = 'all';
+
+  function applyFilters(value, btn) {
+    activeFilter = value;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applySort();
+  }
+
+  function applySort() {
+    const sort = document.getElementById('sort-select').value;
+    const container = document.getElementById('products-container');
+    const cards = Array.from(container.querySelectorAll('.product-page-card'));
+
+    cards.forEach(c => {
+      const cat = c.dataset.category;
+      const mat = c.dataset.material;
+      const show = activeFilter === 'all' || cat === activeFilter || mat === activeFilter;
+      c.style.display = show ? 'block' : 'none';
+    });
+
+    const visible = cards.filter(c => c.style.display !== 'none');
+    visible.sort((a, b) => {
+      if (sort === 'low') return +a.dataset.price - +b.dataset.price;
+      if (sort === 'high') return +b.dataset.price - +a.dataset.price;
+      if (sort === 'rating') return +b.dataset.rating - +a.dataset.rating;
+      return +b.dataset.popular - +a.dataset.popular;
+    });
+    visible.forEach(c => container.appendChild(c));
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('florissaCart')) || [];
+    document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+  }
+
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('florissaCart')) || [];
+    const ex = cart.find(i => i.name === name);
+    if (ex) ex.qty++; else cart.push({ name, price, qty: 1 });
+    localStorage.setItem('florissaCart', JSON.stringify(cart));
+    updateCartCount();
+    showNotif(name + ' added to cart! 🌸');
+  }
+
+  function showNotif(msg) {
+    let notif = document.getElementById('florissa-notif');
+    if (!notif) {
+      notif = document.createElement('div');
+      notif.id = 'florissa-notif';
+      notif.className = 'florissa-notif';
+      document.body.appendChild(notif);
+    }
+    notif.innerHTML = '<img src="image/logo.png" class="notif-logo" alt="Florissa"> <span>' + msg + '</span>';
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 3500);
+  }
+
+  let currentProduct = '';
+  let selectedStar = 0;
+
+  const defaultReviews = {
+    'Ribbon Flower Bouquet': [{ name: 'Nethmi R.', stars: 5, comment: 'Absolutely beautiful!' }, { name: 'Dilani P.', stars: 5, comment: 'Perfect gift for my mum!' }],
+    'Pipe Cleaner Bouquet': [{ name: 'Kavindi S.', stars: 4, comment: 'Kids loved it so much!' }],
+    'Mixed Ribbon Bouquet': [{ name: 'Amali K.', stars: 5, comment: 'Gorgeous colours, great quality.' }],
+    'Flower Photo Frame': [{ name: 'Sachini M.', stars: 5, comment: 'Hung it in my room, so pretty!' }],
+    'Heart Flower Frame': [{ name: 'Ruwani T.', stars: 5, comment: 'Best anniversary gift ever!' }],
+    'Decorative Flower Pot': [{ name: 'Hasini W.', stars: 5, comment: 'Love it on my desk!' }],
+    'Mini Flower Pot': [{ name: 'Imesha F.', stars: 4, comment: 'Cute and compact, great value.' }],
+    'Flower Key Tag': [{ name: 'Sanduni A.', stars: 5, comment: 'Everyone asks where I got it!' }],
+    'Custom Name Key Tag': [{ name: 'Thilini R.', stars: 5, comment: 'Personalised perfectly, loved it.' }],
+    'Florissa Gift Set': [{ name: 'Dilani P.', stars: 5, comment: 'Great value set, well packed!' }],
+    'Birthday Gift Set': [{ name: 'Nethmi R.', stars: 5, comment: 'Perfect birthday surprise!' }],
+    'Wedding Gift Set': [{ name: 'Kavindi S.', stars: 5, comment: 'Elegant and beautiful, loved by all.' }]
+  };
+
+  const offerMap = { 'bouquet': '20% OFF!', 'frame': '15% OFF!', 'giftset': 'FREE Key Tag!' };
+  const materialMap = { 'ribbon': '🎀 Ribbon', 'pipecleaner': '🌀 Pipe Cleaner' };
+
+  function openModal(name, price, img, desc, rating, material, category) {
+    currentProduct = name; selectedStar = 0;
+    document.getElementById('modal-img').src = img;
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-price').textContent = 'LKR ' + price.toLocaleString();
+    document.getElementById('modal-desc').textContent = desc;
+    const stars = '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
+    document.getElementById('modal-stars').innerHTML = '<span class="modal-star-filled">' + stars + '</span> ' + rating + ' / 5.0';
+    const offerTag = document.getElementById('modal-offer-tag');
+    offerTag.textContent = offerMap[category] || '';
+    offerTag.style.display = offerMap[category] ? 'block' : 'none';
+    document.getElementById('modal-material-tag').textContent = materialMap[material] || '';
+    document.getElementById('modal-cart-btn').onclick = () => addToCart(name, price);
+    const waMsg = 'Hi Florissa! 🌸 I want to order: ' + name + ' — LKR ' + price.toLocaleString();
+    document.getElementById('modal-wa-btn').href = 'https://wa.me/94XXXXXXXXX?text=' + encodeURIComponent(waMsg);
+    renderReviews(name);
+    resetStars();
+    document.getElementById('review-name').value = '';
+    document.getElementById('review-comment').value = '';
+    document.getElementById('review-thanks').style.display = 'none';
+    document.getElementById('modal-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function renderReviews(name) {
+    const allReviews = JSON.parse(localStorage.getItem('florissaReviews')) || {};
+    const reviews = [...(defaultReviews[name] || []), ...(allReviews[name] || [])];
+    const avg = reviews.length ? (reviews.reduce((s, r) => s + r.stars, 0) / reviews.length).toFixed(1) : '—';
+    document.getElementById('reviews-summary').innerHTML =
+      '<div class="review-avg"><span class="avg-num">' + avg + '</span><span class="avg-stars">' +
+      (reviews.length ? '★'.repeat(Math.round(avg)) : '') + '</span><span class="avg-count">(' + reviews.length + ' reviews)</span></div>';
+    document.getElementById('reviews-list').innerHTML = reviews.length
+      ? reviews.map(r => `<div class="review-item"><div class="review-top"><span class="review-author">👤 ${r.name}</span><span class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span></div><p class="review-comment">${r.comment}</p></div>`).join('')
+      : '<p style="color:var(--text-muted);font-size:0.9rem">No reviews yet — be the first!</p>';
+  }
+
+  function pickStar(n) {
+    selectedStar = n;
+    document.querySelectorAll('#star-picker span').forEach((s, i) => s.classList.toggle('filled', i < n));
+  }
+
+  function resetStars() {
+    selectedStar = 0;
+    document.querySelectorAll('#star-picker span').forEach(s => s.classList.remove('filled'));
+  }
+
+  function submitReview() {
+    const name = document.getElementById('review-name').value.trim();
+    const comment = document.getElementById('review-comment').value.trim();
+    if (!name || !comment || !selectedStar) { showNotif('Please fill all fields and pick a star!'); return; }
+    const allReviews = JSON.parse(localStorage.getItem('florissaReviews')) || {};
+    if (!allReviews[currentProduct]) allReviews[currentProduct] = [];
+    allReviews[currentProduct].push({ name, stars: selectedStar, comment });
+    localStorage.setItem('florissaReviews', JSON.stringify(allReviews));
+    renderReviews(currentProduct);
+    document.getElementById('review-name').value = '';
+    document.getElementById('review-comment').value = '';
+    resetStars();
+    document.getElementById('review-thanks').style.display = 'block';
+    setTimeout(() => document.getElementById('review-thanks').style.display = 'none', 3000);
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  updateCartCount();
+</script>
+</body>
+</html>

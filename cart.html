@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Florissa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="image/logo.png" alt="Florissa" class="nav-logo-img">
+<span class="nav-brand-name">Florissa</span>
+
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><a href="cart.html" class="nav-cart active">🛒 <span id="cart-count">0</span></a></li>
+  </ul>
+</nav>
+
+<div class="offers-ticker">
+  <div class="offers-track">
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+  </div>
+</div>
+
+<section class="page-header">
+  <span class="section-label">Your Order</span>
+  <h1 class="section-title">Your <em>Cart</em></h1>
+  <p class="section-sub">Review your items and place your order via WhatsApp.</p>
+</section>
+
+<section class="cart-section">
+  <div class="cart-grid">
+    <div class="cart-items-wrap">
+      <div id="cart-items-container"></div>
+      <div class="cart-empty" id="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>You haven't added anything yet — go explore our collection!</p>
+        <a href="products.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Shop Now →</a>
+      </div>
+    </div>
+
+    <!-- COUPON + SUMMARY -->
+    <div class="cart-summary" id="cart-summary" style="display:none">
+      <h3 class="section-title" style="font-size:1.5rem">Order <em>Summary</em></h3>
+
+      <!-- COUPON -->
+      <div class="coupon-wrap">
+        <label>Have a discount code?</label>
+        <div class="coupon-row">
+          <input type="text" id="coupon-input" placeholder="e.g. BLOOM20" class="coupon-field">
+          <button onclick="applyCoupon()" class="coupon-btn">Apply</button>
+        </div>
+        <div class="coupon-msg" id="coupon-msg"></div>
+      </div>
+
+      <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">LKR 0</span></div>
+      <div class="summary-row" id="discount-row" style="display:none;color:var(--green)"><span>Discount</span><span id="summary-discount">— LKR 0</span></div>
+      <div class="summary-row"><span>Delivery</span><span>Discussed on WhatsApp</span></div>
+      <div class="summary-row summary-total"><span>Total</span><span id="summary-total">LKR 0</span></div>
+
+      <div class="cart-note">
+        <label>Add a note (optional)</label>
+        <textarea id="cart-note" rows="3" placeholder="e.g. colour preference, occasion, custom message..."></textarea>
+      </div>
+      <button class="btn-whatsapp" style="width:100%;justify-content:center;margin-top:1rem" onclick="orderOnWhatsApp()">💬 Order via WhatsApp</button>
+      <button class="btn-clear-cart" onclick="clearCart()">🗑 Clear Cart</button>
+      <p class="cart-note-small">After clicking, your order details will be sent to our WhatsApp. We'll confirm and discuss delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- YOU MAY ALSO LIKE -->
+<section class="also-like-section">
+  <div style="text-align:center;margin-bottom:2rem">
+    <span class="section-label">Keep Shopping</span>
+    <h2 class="section-title">You May Also <em>Like</em></h2>
+  </div>
+  <div class="also-like-grid">
+    <div class="product-card reveal"><img src="image/redribbon.jpg" alt="Ribbon Bouquet" class="product-img"><div class="product-info"><div class="product-name">Ribbon Flower Bouquet</div><div class="product-stars">★★★★★ <span>4.8</span></div><div class="product-price">LKR 1,200</div><button class="add-to-cart-btn" onclick="addToCart('Ribbon Flower Bouquet',1200)">Add to Cart 🛒</button></div></div>
+    <div class="product-card reveal"><img src="image/flowersbox.jpg" alt="Flower Frame" class="product-img"><div class="product-info"><div class="product-name">Flower Frame</div><div class="product-stars">★★★★★ <span>4.6</span></div><div class="product-price">LKR 850</div><button class="add-to-cart-btn" onclick="addToCart('Flower Photo Frame',850)">Add to Cart 🛒</button></div></div>
+    <div class="product-card reveal"><img src="image/keytag.jpg" alt="Key Tag" class="product-img"><div class="product-info"><div class="product-name">Flower Key Tag</div><div class="product-stars">★★★★★ <span>4.9</span></div><div class="product-price">LKR 350</div><button class="add-to-cart-btn" onclick="addToCart('Flower Key Tag',350)">Add to Cart 🛒</button></div></div>
+    <div class="product-card reveal"><img src="image/giftpack1.jpeg" alt="Gift Set" class="product-img"><div class="product-info"><div class="product-name">Florissa Gift Set</div><div class="product-stars">★★★★★ <span>4.8</span></div><div class="product-price">LKR 2,200</div><button class="add-to-cart-btn" onclick="addToCart('Florissa Gift Set',2200)">Add to Cart 🛒</button></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand-link">
+        <img src="image/logo.png" alt="Florissa" class="footer-logo-img">
+        <span class="footer-brand-name">Florissa</span>
+      </a>
+      <p>Handmade ribbon and pipe cleaner flowers for gifts, occasions, and home décor — crafted with love in Sri Lanka.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">&#9752;</a>
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="social-link" title="WhatsApp">&#9742;</a>
+        <a href="#" class="social-link" title="Facebook">&#9670;</a>
+      </div>
+    </div>
+
+    <!-- Shop links -->
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="products.html">Bouquets</a></li>
+        <li><a href="products.html">Frames</a></li>
+        <li><a href="products.html">Pots</a></li>
+        <li><a href="products.html">Key Tags</a></li>
+        <li><a href="products.html">Gift Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Info links -->
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Custom Orders</a></li>
+        <li><a href="contact.html">Delivery</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact links -->
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="https://wa.me/94XXXXXXXXX" target="_blank">WhatsApp</a></li>
+        <li><a href="contact.html">Email Us</a></li>
+        <li><a href="products.html" class="footer-order-link">&#9830; Order Now</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>&#169; 2026 Florissa. All rights reserved.</span>
+    <span>Crafted with &#10022; in Sri Lanka</span>
+  </div>
+</footer>
+
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const COUPONS = { 'BLOOM20': 20, 'FRAME15': 15, 'GIFT350': 10 };
+  let appliedDiscount = 0;
+
+  function getCart() { return JSON.parse(localStorage.getItem('florissaCart')) || []; }
+  function saveCart(c) { localStorage.setItem('florissaCart', JSON.stringify(c)); }
+
+  function updateCartCount() {
+    const cart = getCart();
+    document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+  }
+
+  function showNotif(msg) {
+    let notif = document.getElementById('florissa-notif');
+    if (!notif) { notif = document.createElement('div'); notif.id = 'florissa-notif'; notif.className = 'florissa-notif'; document.body.appendChild(notif); }
+   notif.innerHTML = `
+    <img src="image/logo.png" 
+         class="notif-logo" 
+         alt="Florissa" 
+         onerror="this.src='logo.png'; this.onerror=null;"> 
+    <span>${msg}</span>
+  `;
+    setTimeout(() => notif.classList.remove('show'), 3500);
+  }
+
+  function applyCoupon() {
+    const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+    const msgEl = document.getElementById('coupon-msg');
+    if (COUPONS[code]) {
+      appliedDiscount = COUPONS[code];
+      msgEl.textContent = '✅ ' + appliedDiscount + '% discount applied!';
+      msgEl.style.color = 'var(--green)';
+      renderCart();
+    } else {
+      appliedDiscount = 0;
+      msgEl.textContent = '❌ Invalid code. Try BLOOM20, FRAME15, or GIFT350.';
+      msgEl.style.color = 'var(--rose)';
+      renderCart();
+    }
+  }
+
+  function renderCart() {
+    const cart = getCart();
+    const container = document.getElementById('cart-items-container');
+    const empty = document.getElementById('cart-empty');
+    const summary = document.getElementById('cart-summary');
+    if (cart.length === 0) { container.innerHTML = ''; empty.style.display = 'block'; summary.style.display = 'none'; return; }
+    empty.style.display = 'none'; summary.style.display = 'block';
+    let subtotal = 0;
+    container.innerHTML = cart.map((item, idx) => {
+      subtotal += item.price * item.qty;
+      return `<div class="cart-item">
+        <div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">LKR ${item.price.toLocaleString()} each</div></div>
+        <div class="cart-item-controls">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+          <button class="remove-btn" onclick="removeItem(${idx})">🗑</button>
+        </div>
+        <div class="cart-item-subtotal">LKR ${(item.price*item.qty).toLocaleString()}</div>
+      </div>`;
+    }).join('');
+    const discountAmt = Math.round(subtotal * appliedDiscount / 100);
+    const total = subtotal - discountAmt;
+    document.getElementById('summary-subtotal').textContent = 'LKR ' + subtotal.toLocaleString();
+    document.getElementById('summary-total').textContent = 'LKR ' + total.toLocaleString();
+    const discRow = document.getElementById('discount-row');
+    if (appliedDiscount > 0) {
+      discRow.style.display = 'flex';
+      document.getElementById('summary-discount').textContent = '− LKR ' + discountAmt.toLocaleString();
+    } else { discRow.style.display = 'none'; }
+    updateCartCount();
+  }
+
+  function changeQty(idx, delta) {
+    let cart = getCart(); cart[idx].qty += delta;
+    if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    saveCart(cart); renderCart();
+  }
+  function removeItem(idx) { let cart = getCart(); cart.splice(idx, 1); saveCart(cart); renderCart(); }
+  function clearCart() { if (confirm('Clear all items?')) { localStorage.removeItem('florissaCart'); appliedDiscount = 0; renderCart(); } }
+
+  function addToCart(name, price) {
+    let cart = getCart();
+    const ex = cart.find(i => i.name === name);
+    if (ex) ex.qty++; else cart.push({ name, price, qty: 1 });
+    saveCart(cart); renderCart();
+    showNotif(name + ' added to cart! 🌸');
+  }
+
+  function orderOnWhatsApp() {
+    const cart = getCart();
+    if (!cart.length) return;
+    const note = document.getElementById('cart-note').value;
+    const coupon = document.getElementById('coupon-input').value.trim().toUpperCase();
+    let msg = 'Hello Florissa! 🌸 I would like to place an order:\n\n';
+    let subtotal = 0;
+    cart.forEach(item => { msg += '• ' + item.name + ' x' + item.qty + ' — LKR ' + (item.price*item.qty).toLocaleString() + '\n'; subtotal += item.price*item.qty; });
+    const discountAmt = Math.round(subtotal * appliedDiscount / 100);
+    msg += '\nSubtotal: LKR ' + subtotal.toLocaleString();
+    if (appliedDiscount > 0) msg += '\nDiscount (' + coupon + '): − LKR ' + discountAmt.toLocaleString();
+    msg += '\nTotal: LKR ' + (subtotal - discountAmt).toLocaleString();
+    if (note) msg += '\n\nNote: ' + note;
+    window.open('https://wa.me/94712345678?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  renderCart();
+</script>
+</body>
+</html>

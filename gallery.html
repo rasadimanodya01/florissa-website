@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Florissa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="image/logo.png" alt="Florissa" class="nav-logo-img">
+
+<span class="nav-brand-name">Florissa</span>
+
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><a href="cart.html" class="nav-cart">🛒 <span id="cart-count">0</span></a></li>
+  </ul>
+</nav>
+
+<div class="offers-ticker">
+  <div class="offers-track">
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+  </div>
+</div>
+
+<section class="page-header">
+  <span class="section-label">Our Work</span>
+  <h1 class="section-title">Our <em>Gallery</em></h1>
+  <p class="section-sub">A collection of our handmade creations — every piece made with love and care.</p>
+</section>
+
+<section class="filter-section">
+  <div class="filter-buttons">
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+    <button class="filter-btn" onclick="filterGallery('bouquet', this)">Bouquets</button>
+    <button class="filter-btn" onclick="filterGallery('frame', this)">Frames</button>
+    <button class="filter-btn" onclick="filterGallery('pot', this)">Pots</button>
+    <button class="filter-btn" onclick="filterGallery('keytag', this)">Key Tags</button>
+    <button class="filter-btn" onclick="filterGallery('giftset', this)">Gift Sets</button>
+    <button class="filter-btn material-btn" onclick="filterGallery('ribbon', this)">🎀 Ribbon</button>
+    <button class="filter-btn material-btn" onclick="filterGallery('pipecleaner', this)">🌀 Pipe Cleaner</button>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-grid" id="gallery-container">
+    <div class="gallery-item reveal" data-category="bouquet" data-material="ribbon"><img src="image/redribbon.jpg" alt="Ribbon Bouquet"><div class="gallery-overlay"><p>Ribbon Flower Bouquet</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="bouquet" data-material="pipecleaner"><img src="image/pipeclean.jpg" alt="Pipe Cleaner Bouquet"><div class="gallery-overlay"><p>Pipe Cleaner Bouquet</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="bouquet" data-material="ribbon"><img src="image/mixribbon.jpg" alt="Mixed Bouquet"><div class="gallery-overlay"><p>Mixed Ribbon Bouquet</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="frame" data-material="ribbon"><img src="image/Flowersbox.jpg" alt="Flower Frame"><div class="gallery-overlay"><p>Flower Photo Frame</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="frame" data-material="ribbon"><img src="image/heartbox.jpg" alt="Heart Frame"><div class="gallery-overlay"><p>Heart Flower Frame</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="pot" data-material="pipecleaner"><img src="image/flowerpot.jpg" alt="Flower Pot"><div class="gallery-overlay"><p>Decorative Flower Pot</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="pot" data-material="pipecleaner"><img src="image/miniflowerpot.jpg" alt="Mini Pot"><div class="gallery-overlay"><p>Mini Flower Pot</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="keytag" data-material="pipecleaner"><img src="image/keytag.jpg" alt="Key Tag"><div class="gallery-overlay"><p>Flower Key Tag</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="keytag" data-material="ribbon"><img src="image/namekeytag.jpg" alt="Custom Key Tag"><div class="gallery-overlay"><p>Custom Name Key Tag</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="giftset" data-material="ribbon"><img src="image/giftpack1.jpeg" alt="Gift Set"><div class="gallery-overlay"><p>Florissa Gift Set</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="giftset" data-material="ribbon"><img src="image/birthdaygift.jpeg" alt="Birthday Gift Set"><div class="gallery-overlay"><p>Birthday Gift Set</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+    <div class="gallery-item reveal" data-category="giftset" data-material="ribbon"><img src="image/wedding.jpeg" alt="Wedding Gift Set"><div class="gallery-overlay"><p>Wedding Gift Set</p><a href="products.html" class="gallery-shop-btn">Shop →</a></div></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-caption"></p>
+</div>
+
+<section class="custom-banner reveal">
+  <div class="custom-banner-text"><h2>Love what you see?</h2><p>Order your favourite or request a custom design!</p></div>
+  <a href="products.html" class="btn-primary">Shop Now →</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand-link">
+        <img src="image/logo.png" alt="Florissa" class="footer-logo-img">
+        <span class="footer-brand-name">Florissa</span>
+      </a>
+      <p>Handmade ribbon and pipe cleaner flowers for gifts, occasions, and home décor — crafted with love in Sri Lanka.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">&#9752;</a>
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="social-link" title="WhatsApp">&#9742;</a>
+        <a href="#" class="social-link" title="Facebook">&#9670;</a>
+      </div>
+    </div>
+
+    <!-- Shop links -->
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="products.html">Bouquets</a></li>
+        <li><a href="products.html">Frames</a></li>
+        <li><a href="products.html">Pots</a></li>
+        <li><a href="products.html">Key Tags</a></li>
+        <li><a href="products.html">Gift Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Info links -->
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Custom Orders</a></li>
+        <li><a href="contact.html">Delivery</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact links -->
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="https://wa.me/94XXXXXXXXX" target="_blank">WhatsApp</a></li>
+        <li><a href="contact.html">Email Us</a></li>
+        <li><a href="products.html" class="footer-order-link">&#9830; Order Now</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>&#169; 2026 Florissa. All rights reserved.</span>
+    <span>Crafted with &#10022; in Sri Lanka</span>
+  </div>
+</footer>
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function filterGallery(value, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.style.display = (value === 'all' || item.dataset.category === value || item.dataset.material === value) ? 'block' : 'none';
+    });
+  }
+
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', e => {
+      e.stopPropagation();
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-caption').textContent = img.alt;
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('florissaCart')) || [];
+    document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+  }
+  updateCartCount();
+</script>
+</body>
+</html>

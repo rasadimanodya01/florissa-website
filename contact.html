@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Florissa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="image/logo.png" alt="Florissa" class="nav-logo-img">
+<span class="nav-brand-name">Florissa</span>
+
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><a href="cart.html" class="nav-cart">🛒 <span id="cart-count">0</span></a></li>
+  </ul>
+</nav>
+
+<div class="offers-ticker">
+  <div class="offers-track">
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🌸 20% OFF all Bouquets — use code BLOOM20</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎀 15% OFF Ribbon Frames — use code FRAME15</span><span class="offer-sep">✦</span>
+    <span class="offer-item">🎁 Buy Gift Set, get FREE Key Tag — use code GIFT350</span><span class="offer-sep">✦</span>
+  </div>
+</div>
+
+<section class="page-header">
+  <span class="section-label">Get in Touch</span>
+  <h1 class="section-title">Contact <em>Florissa</em></h1>
+  <p class="section-sub">Have a question or want to place a custom order? We'd love to hear from you!</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h2 class="section-title">Let's <em>Talk</em></h2>
+      <p style="color:var(--text-muted);margin-bottom:2rem;font-weight:300;line-height:1.7">Whether you want to place an order, ask about custom designs, or just say hello — we're always happy to chat!</p>
+      <div class="contact-item"><div class="contact-icon">📱</div><div><h4>WhatsApp</h4><p>+94 71 23 45 678</p><a href="https://wa.me/94XXXXXXXXX" target="_blank" class="contact-link">Chat on WhatsApp →</a></div></div>
+      <div class="contact-item"><div class="contact-icon">📷</div><div><h4>Instagram</h4><p>@florissa.lk</p><a href="https://instagram.com/florissa.lk" target="_blank" class="contact-link">Follow us →</a></div></div>
+      <div class="contact-item"><div class="contact-icon">📧</div><div><h4>Email</h4><p>hello@florissa.lk</p><a href="mailto:hello@florissa.lk" class="contact-link">Send an email →</a></div></div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Location</h4><p>Sri Lanka — island-wide delivery available</p></div></div>
+    </div>
+    <div class="contact-form-wrap reveal">
+      <h2 class="section-title">Send a <em>Message</em></h2>
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="e.g. Nethmi Perera" required></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" required></div>
+        <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" placeholder="+94 XX XXX XXXX"></div>
+        <div class="form-group"><label>What are you looking for?</label>
+          <select><option value="">Select a product type</option><option>Ribbon Bouquet</option><option>Pipe Cleaner Bouquet</option><option>Flower Frame</option><option>Decorative Pot</option><option>Key Tag</option><option>Gift Set</option><option>Custom Order</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>Your Message</label><textarea rows="5" placeholder="Tell us about your order or ask us anything..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Message 🌸</button>
+      </form>
+      <div class="form-success" id="form-success">🌸 Thank you! We'll get back to you on WhatsApp or email soon.</div>
+    </div>
+  </div>
+</section>
+
+<section class="whatsapp-banner reveal">
+  <div class="whatsapp-banner-inner">
+    <div><h2>Prefer to order on WhatsApp?</h2><p>Most of our customers order directly through WhatsApp — it's fast, easy, and personal!</p></div>
+    <a href="https://wa.me/94712345678?text=Hi%20Florissa!%20I'd%20like%20to%20place%20an%20order." target="_blank" class="btn-whatsapp">💬 Order on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand-link">
+        <img src="image/logo.png" alt="Florissa" class="footer-logo-img">
+        <span class="footer-brand-name">Florissa</span>
+      </a>
+      <p>Handmade ribbon and pipe cleaner flowers for gifts, occasions, and home décor — crafted with love in Sri Lanka.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">&#9752;</a>
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="social-link" title="WhatsApp">&#9742;</a>
+        <a href="#" class="social-link" title="Facebook">&#9670;</a>
+      </div>
+    </div>
+
+    <!-- Shop links -->
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="products.html">Bouquets</a></li>
+        <li><a href="products.html">Frames</a></li>
+        <li><a href="products.html">Pots</a></li>
+        <li><a href="products.html">Key Tags</a></li>
+        <li><a href="products.html">Gift Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Info links -->
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Custom Orders</a></li>
+        <li><a href="contact.html">Delivery</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact links -->
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="https://wa.me/94XXXXXXXXX" target="_blank">WhatsApp</a></li>
+        <li><a href="contact.html">Email Us</a></li>
+        <li><a href="products.html" class="footer-order-link">&#9830; Order Now</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>&#169; 2026 Florissa. All rights reserved.</span>
+    <span>Crafted with &#10022; in Sri Lanka</span>
+  </div>
+</footer>
+
+<a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function submitForm(e) {
+    e.preventDefault();
+    document.querySelector('.contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('florissaCart')) || [];
+    document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+  }
+  updateCartCount();
+</script>
+</body>
+</html>
